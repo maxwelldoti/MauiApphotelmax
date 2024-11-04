@@ -97,7 +97,7 @@
                 </Frame>
 
                 <HorizontalStackLayout Spacing="10" HorizontalOptions="CenterAndExpand">
-                    <Button Text="Avançar" FontFamily="Itim"/>
+                    <Button Text="Avançar" Clicked="Button_Clicked"  FontFamily="Itim"/>
                     <Button Text="Sobre" Clicked="OnSobreButtonClicked" FontFamily="Itim"/>
                 </HorizontalStackLayout>
 
