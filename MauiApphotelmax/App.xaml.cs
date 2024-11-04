@@ -21,17 +21,29 @@ namespace MauiApphotelmax
             new Quarto()
             {
                 Descricao = "Suíte Single",
-                ValorDiariaAdulto = 50,
+                ValorDiariaAdulto = 50.0,
                 ValorDiariaCrianca = 25
             },
             new Quarto()
             {
                 Descricao = "Suíte Crise",
-                ValorDiariaAdulto = 25,
+                ValorDiariaAdulto = 25.0,
                 ValorDiariaCrianca = 12.5
+            },
+              new Quarto()
+            {
+                Descricao = "Suíte com espaço para 1 PET",
+                ValorDiariaAdulto = 90.0,
+                ValorDiariaCrianca = 30.5
+            },
+                new Quarto()
+            {
+                Descricao = "Suíte com espaço para  2 PETS",
+                ValorDiariaAdulto = 120.0,
+                ValorDiariaCrianca = 65.0
             }
         };
-
+         
         public App()
         {
             InitializeComponent();

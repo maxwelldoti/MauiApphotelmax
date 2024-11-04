@@ -4,7 +4,8 @@
              x:Class="MauiApphotelmax.Views.ContratacaoHospedagem"
              Title="ContratacaoHospedagem"
              NavigationPage.HasNavigationBar="false"
-             BackgroundColor="{StaticResource Gray200}">
+             BackgroundColor="#FFFBCE">
+    
 
     <VerticalStackLayout VerticalOptions="Center"
                          Padding="10">
@@ -12,56 +13,77 @@
         <Label Text="Cálculo da Diária"
                FontFamily="Itim"
                FontSize="40"
-               TextColor="{StaticResource Tertiary}"  
+               TextColor="#FF6B6B"
                HorizontalOptions="Center"
                VerticalOptions="Center" />
 
-        <Frame Padding="10">
+        <Frame Padding="10" BackgroundColor="#FFF5E1" CornerRadius="10">
             <VerticalStackLayout>
 
-                <Grid RowDefinitions="Auto, Auto"
-                  ColumnDefinitions="*, *, 2*">
+                <Grid RowDefinitions="Auto, Auto, Auto"
+                      ColumnDefinitions="*, *, 2*">
 
                     <Label Grid.Row="0" Grid.Column="0"
                            Text="Adultos:"
-                           FontFamily="Itim"/>
+                           FontFamily="Itim"
+                           TextColor="#4ECDC4"/>
+                  
 
                     <Label Grid.Row="0" Grid.Column="1"
-                           TextColor="{StaticResource Tertiary}"
-                           Text="{Binding Value}"
-                           BindingContext="{x:Reference stp_adultos}"
+                           TextColor="#FF6B6B"
+                           Text="{Binding Source={x:Reference stp_adultos}, Path=Value}"
                            FontFamily="Itim"/>
 
                     <Stepper Grid.Row="0" Grid.Column="2"
-                            x:Name="stp_adultos"
-                            Minimum="0"
-                            Maximum="10"
-                            Increment="1" />
+                             x:Name="stp_adultos"
+                             Minimum="0"
+                             Maximum="10"
+                             Increment="1"
+                             BackgroundColor="#FFD93D" />
+                   
 
                     <Label Grid.Row="1" Grid.Column="0"
                            Text="Crianças:"
-                           FontFamily="Itim"/>
+                           FontFamily="Itim"
+                           TextColor="#4ECDC4"/>
 
                     <Label Grid.Row="1" Grid.Column="1"
-                           TextColor="{StaticResource Tertiary}"
-                           Text="{Binding Value}"
-                           BindingContext="{x:Reference stp_criancas}"
+                           TextColor="#FF6B6B"
+                           Text="{Binding Source={x:Reference stp_criancas}, Path=Value}"
                            FontFamily="Itim"/>
 
                     <Stepper Grid.Row="1" Grid.Column="2"
-                            x:Name="stp_criancas"
-                            Minimum="0"
-                            Maximum="10"
-                            Increment="1" />
+                             x:Name="stp_criancas"
+                             Minimum="0"
+                             Maximum="10"
+                             Increment="1"
+                             BackgroundColor="#FFD93D" />
+
+                    <Label Grid.Row="2" Grid.Column="0"
+                           Text="Pets:"
+                           FontFamily="Itim"
+                           TextColor="#4ECDC4"/>
+
+                    <Label Grid.Row="2" Grid.Column="1"
+                           TextColor="#FF6B6B"
+                           Text="{Binding Source={x:Reference stp_pets}, Path=Value}"
+                           FontFamily="Itim"/>
+
+                    <Stepper Grid.Row="2" Grid.Column="2"
+                             x:Name="stp_pets"
+                             Minimum="0"
+                             Maximum="2"
+                             Increment="1"
+                             BackgroundColor="#FFD93D" />
                 </Grid>
 
-                <Frame Padding="10" Margin="10">
+                <Frame Padding="10" Margin="10" BackgroundColor="#E4F9F5" CornerRadius="10">
                     <VerticalStackLayout>
 
                         <Label Text="Escolha sua Suíte"
                                TextTransform="Uppercase"
                                FontSize="Subtitle"
-                               TextColor="{StaticResource Tertiary}"
+                               TextColor="#FF6B6B"
                                FontFamily="Itim"/>
 
                         <Picker x:Name="pck_quarto"
@@ -72,17 +94,19 @@
                 </Frame>
 
                 <Frame Padding="10"
-                       Margin="10">
+                       Margin="10"
+                       BackgroundColor="#FFEBE8" 
+                       CornerRadius="10">
                     <VerticalStackLayout Spacing="10">
 
                         <Label Text="Período da Estadia"
                                TextTransform="Uppercase"
                                FontSize="Subtitle"
-                               TextColor="{StaticResource Tertiary}"
+                               TextColor="#FF6B6B"
                                FontFamily="Itim"/>
 
                         <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
-                            <Label Text="Check-in:" FontFamily="Itim"/>
+                            <Label Text="Check-in:" FontFamily="Itim" TextColor="#4ECDC4"/>
                             <DatePicker x:Name="dtpck_checkin"
                                         DateSelected="dtpck_checkin_DateSelected"
                                         Format="dd/MM/yyyy" 
@@ -90,7 +114,7 @@
                         </HorizontalStackLayout>
 
                         <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
-                            <Label Text="Check-out:" FontFamily="Itim"/>
+                            <Label Text="Check-out:" FontFamily="Itim" TextColor="#4ECDC4"/>
                             <DatePicker x:Name="dtpck_checkout"
                                         Format="dd/MM/yyyy" 
                                         FontFamily="Itim"/>
@@ -99,8 +123,17 @@
                 </Frame>
 
                 <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
-                    <Button Text="Avançar" Clicked="Button_Clicked"  FontFamily="Itim"/>
-                    <Button Text="Sobre" Clicked="OnSobreButtonClicked" FontFamily="Itim"/>
+                    <Button Text="Avançar" 
+                            Clicked="Button_Clicked"  
+                            FontFamily="Itim"
+                            BackgroundColor="#FF6B6B"
+                            TextColor="White"/>
+
+                    <Button Text="Sobre" 
+                            Clicked="OnSobreButtonClicked" 
+                            FontFamily="Itim"
+                            BackgroundColor="#4ECDC4"
+                            TextColor="White"/>
                 </HorizontalStackLayout>
 
             </VerticalStackLayout>
@@ -109,4 +142,3 @@
     </VerticalStackLayout>
 
 </ContentPage>
-
