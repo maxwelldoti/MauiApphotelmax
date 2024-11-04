@@ -84,6 +84,7 @@
                         <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
                             <Label Text="Check-in:" FontFamily="Itim"/>
                             <DatePicker x:Name="dtpck_checkin"
+                                        DateSelected="dtpck_checkin_DateSelected"
                                         Format="dd/MM/yyyy" 
                                         FontFamily="Itim"/>
                         </HorizontalStackLayout>
