@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApphotelmax.Views.ContratacaoHospedagem"
+             Title="ContratacaoHospedagem"
+             NavigationPage.HasNavigationBar="false"
+             BackgroundColor="{StaticResource Gray200}">
+
+    <VerticalStackLayout VerticalOptions="Center"
+                         Padding="10">
+
+        <Label Text="Cálculo da Diária"
+               FontFamily="Itim"
+               FontSize="40"
+               TextColor="{StaticResource Tertiary}"  
+               HorizontalOptions="Center"
+               VerticalOptions="Center" />
+
+        <Frame Padding="10">
+            <VerticalStackLayout>
+
+                <Grid RowDefinitions="Auto, Auto"
+                  ColumnDefinitions="*, *, 2*">
+
+                    <Label Grid.Row="0" Grid.Column="0"
+                           Text="Adultos:"
+                           FontFamily="Itim"/>
+
+                    <Label Grid.Row="0" Grid.Column="1"
+                           TextColor="{StaticResource Tertiary}"
+                           Text="{Binding Value}"
+                           BindingContext="{x:Reference stp_adultos}"
+                           FontFamily="Itim"/>
+
+                    <Stepper Grid.Row="0" Grid.Column="2"
+                            x:Name="stp_adultos"
+                            Minimum="0"
+                            Maximum="10"
+                            Increment="1" />
+
+                    <Label Grid.Row="1" Grid.Column="0"
+                           Text="Crianças:"
+                           FontFamily="Itim"/>
+
+                    <Label Grid.Row="1" Grid.Column="1"
+                           TextColor="{StaticResource Tertiary}"
+                           Text="{Binding Value}"
+                           BindingContext="{x:Reference stp_criancas}"
+                           FontFamily="Itim"/>
+
+                    <Stepper Grid.Row="1" Grid.Column="2"
+                            x:Name="stp_criancas"
+                            Minimum="0"
+                            Maximum="10"
+                            Increment="1" />
+                </Grid>
+
+                <Frame Padding="10" Margin="10">
+                    <VerticalStackLayout>
+
+                        <Label Text="Escolha sua Suíte"
+                               TextTransform="Uppercase"
+                               FontSize="Subtitle"
+                               TextColor="{StaticResource Tertiary}"
+                               FontFamily="Itim"/>
+
+                        <Picker x:Name="pck_quarto"
+                                Title="Selecione sua Acomodação" 
+                                FontFamily="Itim"/>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <Frame Padding="10"
+                       Margin="10">
+                    <VerticalStackLayout Spacing="10">
+
+                        <Label Text="Período da Estadia"
+                               TextTransform="Uppercase"
+                               FontSize="Subtitle"
+                               TextColor="{StaticResource Tertiary}"
+                               FontFamily="Itim"/>
+
+                        <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                            <Label Text="Check-in:" FontFamily="Itim"/>
+                            <DatePicker x:Name="dtpck_checkin"
+                                        Format="dd/MM/yyyy" 
+                                        FontFamily="Itim"/>
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                            <Label Text="Check-out:" FontFamily="Itim"/>
+                            <DatePicker x:Name="dtpck_checkout"
+                                        Format="dd/MM/yyyy" 
+                                        FontFamily="Itim"/>
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <HorizontalStackLayout Spacing="10" HorizontalOptions="CenterAndExpand">
+                    <Button Text="Avançar" FontFamily="Itim"/>
+                    <Button Text="Sobre" Clicked="OnSobreButtonClicked" FontFamily="Itim"/>
+                </HorizontalStackLayout>
+
+            </VerticalStackLayout>
+        </Frame>
+
+    </VerticalStackLayout>
+
+</ContentPage>
+
